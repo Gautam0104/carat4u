@@ -46,6 +46,15 @@
   .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
   .brand-logo { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1, "onum" 0; display: inline-flex; align-items: baseline; line-height: 1; }
 
+  /* ---------- Logo blend: feather the JPEG's edges into the dark header ---------- */
+  /* The logo's near-black bg already matches the header, so the only artifact is
+     the hard rectangular boundary. This radial mask fades the outer edges fully
+     to transparent, dissolving the box. Gold content sits in the centre, untouched. */
+  .logo-blend {
+    -webkit-mask-image: radial-gradient(ellipse 70% 74% at 50% 50%, #000 40%, rgba(0,0,0,0) 86%);
+            mask-image: radial-gradient(ellipse 70% 74% at 50% 50%, #000 40%, rgba(0,0,0,0) 86%);
+  }
+
   /* ---------- HERO: organic wavy bottom ---------- */
   .hero-clip {
     -webkit-clip-path: url(#heroWave);
@@ -180,10 +189,10 @@
 <!-- ====================================================== -->
 <!-- HEADER                                                  -->
 <!-- ====================================================== -->
-<header class="bg-ivory">
+<header class="bg-[#04050A] text-cream">
   <div class="max-w-[1240px] mx-auto px-5 sm:px-6 md:px-8 lg:px-10 h-[96px] md:h-[100px] lg:h-[108px] flex items-center justify-between">
     <a href="#" class="flex items-center pl-1 shrink-0" aria-label="CARAT4U — Fine Jewellery">
-      <img src="transparent-logo.png" alt="CARAT4U Fine Jewellery" class="h-[84px] md:h-[90px] lg:h-[96px] w-auto object-contain" />
+      <img src="logo.jpeg" alt="CARAT4U Fine Jewellery" class="logo-blend h-[84px] md:h-[90px] lg:h-[96px] w-auto object-contain" />
     </a>
 
     <nav class="hidden lg:flex items-center gap-4 xl:gap-5 mx-auto">
@@ -220,14 +229,14 @@
     </div>
   </div>
 
-  <div id="mobileNav" class="lg:hidden overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out bg-ivory border-t border-line/40">
+  <div id="mobileNav" class="lg:hidden overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out bg-[#04050A] border-t border-cream/15">
     <nav class="px-5 sm:px-6 py-4 flex flex-col">
-      <a href="#" class="py-3 text-[12px] tracking-[0.24em] uppercase opacity-90 border-b border-line/30">Bridal</a>
-      <a href="#" class="py-3 text-[12px] tracking-[0.24em] uppercase opacity-90 border-b border-line/30">Solitaires</a>
-      <a href="#" class="py-3 text-[12px] tracking-[0.24em] uppercase opacity-90 border-b border-line/30">Engagement</a>
-      <a href="#" class="py-3 text-[12px] tracking-[0.24em] uppercase opacity-90 border-b border-line/30">Collections</a>
-      <a href="#" class="py-3 text-[12px] tracking-[0.24em] uppercase opacity-90 border-b border-line/30">Atelier</a>
-      <a href="#" class="py-3 text-[12px] tracking-[0.24em] uppercase opacity-90 border-b border-line/30">Journal</a>
+      <a href="#" class="py-3 text-[12px] tracking-[0.24em] uppercase opacity-90 border-b border-cream/15">Bridal</a>
+      <a href="#" class="py-3 text-[12px] tracking-[0.24em] uppercase opacity-90 border-b border-cream/15">Solitaires</a>
+      <a href="#" class="py-3 text-[12px] tracking-[0.24em] uppercase opacity-90 border-b border-cream/15">Engagement</a>
+      <a href="#" class="py-3 text-[12px] tracking-[0.24em] uppercase opacity-90 border-b border-cream/15">Collections</a>
+      <a href="#" class="py-3 text-[12px] tracking-[0.24em] uppercase opacity-90 border-b border-cream/15">Atelier</a>
+      <a href="#" class="py-3 text-[12px] tracking-[0.24em] uppercase opacity-90 border-b border-cream/15">Journal</a>
       <div class="flex items-center gap-6 pt-4">
         <a href="#" class="text-[11px] tracking-[0.2em] uppercase opacity-80">Account</a>
         <a href="#" class="text-[11px] tracking-[0.2em] uppercase opacity-80">Wishlist</a>

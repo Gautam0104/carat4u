@@ -15,8 +15,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SOURCES = [
     ("banner.png",            1920, 78),
     ("a-diamond-today.png",   1920, 80),
-    ("every-moment.svg",      1920, 80),
-    ("made-slowly.svg",       1920, 80),
+    ("every-moment.png",      1920, 80),
+    ("made-slowly.png",       1920, 80),
     ("experience-avalia.png", 1920, 80),
 ]
 
